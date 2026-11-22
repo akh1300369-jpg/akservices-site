@@ -121,6 +121,12 @@
 
     .nav a:hover { color: var(--accent); }
 
+    .nav .nav-urgent {
+      color: var(--accent);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
     .nav .nav-cta {
       padding: 10px 16px;
       border-radius: 10px;
@@ -551,8 +557,9 @@
       .shell { width: min(100% - 36px, 460px); }
       .topbar { min-height: 70px; }
       .nav { gap: 13px; }
-      .nav a:not(.nav-cta) { display: none; }
-      .nav .nav-cta { padding: 9px 12px; font-size: 13px; }
+      .nav a:not(.nav-cta):not(.nav-urgent) { display: none; }
+      .nav .nav-cta { display: none; }
+      .nav .nav-urgent { padding: 8px 10px; border-radius: 9px; background: var(--accent-soft); font-size: 12px; }
       .theme-toggle { width: 36px; height: 36px; }
       .hero { grid-template-columns: 1fr; gap: 35px; padding: 60px 0; }
       h1 { font-size: clamp(42px, 12vw, 58px); }
@@ -566,6 +573,15 @@
       .step::before { top: 0; }
       .contact-panel { padding: 28px 23px; }
       footer { align-items: flex-start; flex-direction: column; justify-content: center; padding: 20px 0; }
+    }
+
+    @media (max-width: 380px) {
+      .shell { width: calc(100% - 24px); }
+      .brand { gap: 7px; font-size: 14px; }
+      .brand-mark { width: 30px; height: 30px; }
+      .nav { gap: 8px; }
+      .nav .nav-urgent { padding: 7px 8px; font-size: 11px; }
+      .theme-toggle { width: 32px; height: 32px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -582,6 +598,7 @@
     <nav class="nav" aria-label="Navigation principale">
       <a href="#services">Nos services</a>
       <a href="#approche">Notre approche</a>
+      <a class="nav-urgent" href="plomberie.html">Urgence plomberie</a>
       <a class="nav-cta" href="mailto:akservices032021@gmail.com">Parlons de votre projet</a>
       <button class="theme-toggle" type="button" aria-label="Passer en mode sombre" title="Changer de thème">
         <span aria-hidden="true">☾</span>
