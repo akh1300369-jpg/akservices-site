@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="Une fuite ou un problème de plomberie ? Contactez AKServices pour présenter votre demande de dépannage.">
-  <title>Dépannage d'urgence plomberie — AKServices</title>
+  <meta name="description" content="Dépannage plomberie 24 h/24 à Marseille par AKServices. Appelez le 06 51 42 35 50.">
+  <title>Dépannage plomberie 24 h/24 à Marseille — AKServices</title>
   <style>
     :root {
       color-scheme: light;
@@ -108,6 +108,21 @@
     .nav a { font-size: 14px; font-weight: 600; text-decoration: none; }
     .nav .home-link { color: var(--muted); }
     .nav .contact-link { color: var(--accent); }
+    .nav .phone-link {
+      display: inline-flex;
+      min-height: 40px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 13px;
+      border-radius: 9px;
+      background: var(--accent);
+      color: var(--page);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .nav .phone-link:hover { background: var(--accent-dark); }
+    .phone-short { display: none; }
 
     .theme-toggle {
       display: inline-grid;
@@ -169,7 +184,7 @@
       padding: 0 19px;
       border-radius: 11px;
       background: var(--accent);
-      color: #fff;
+      color: var(--page);
       font-size: 14px;
       font-weight: 680;
       text-decoration: none;
@@ -279,8 +294,10 @@
 
     .contact h2 { margin-bottom: 7px; font-size: clamp(25px, 3.5vw, 35px); }
     .contact p { margin: 0; color: rgb(255 255 255 / 84%); }
-    .contact .button { flex: 0 0 auto; background: #fff; color: var(--accent-dark); }
+    .contact .button { flex: 0 0 auto; background: #fff; color: #244a33; }
     .contact .button:hover { background: #eef4ed; }
+    .contact-email { margin-top: 9px; font-size: 13px; }
+    .contact-email a { color: inherit; }
 
     .availability { margin: 16px 0 0; color: var(--muted); font-size: 12px; }
 
@@ -305,8 +322,9 @@
       .shell { width: min(100% - 36px, 460px); }
       .topbar { min-height: 70px; }
       .nav { gap: 12px; }
-      .nav .home-link { display: none; }
-      .nav .contact-link { font-size: 12px; }
+      .nav .home-link, .nav .contact-link { display: none; }
+      .phone-number { display: none; }
+      .phone-short { display: inline; }
       .theme-toggle { width: 34px; height: 34px; }
       .hero { padding: 57px 0 35px; }
       .hero-copy { font-size: 16px; }
@@ -331,7 +349,9 @@
     </a>
     <nav class="nav" aria-label="Navigation principale">
       <a class="home-link" href="index.html">Accueil</a>
-      <a class="contact-link" href="mailto:akservices032021@gmail.com?subject=Demande%20de%20d%C3%A9pannage%20plomberie">Contact</a>
+      <a class="phone-link" href="tel:+33651423550" aria-label="Appeler AKServices au 06 51 42 35 50">
+        <span class="phone-number">06 51 42 35 50</span><span class="phone-short">Appeler</span>
+      </a>
       <button class="theme-toggle" type="button" aria-label="Passer en mode sombre" title="Changer de thème">
         <span aria-hidden="true">☾</span>
       </button>
@@ -340,11 +360,11 @@
 
   <main>
     <section class="hero shell" aria-labelledby="hero-title">
-      <p class="eyebrow">Dépannage d'urgence plomberie</p>
+      <p class="eyebrow">Dépannage plomberie · Marseille · 24 h/24</p>
       <h1 id="hero-title">Une urgence plomberie&nbsp;?<br><span>Faisons le point ensemble.</span></h1>
-      <p class="hero-copy">Fuite d’eau, canalisation bouchée ou robinetterie défaillante : contactez AKServices et décrivez votre situation pour organiser la suite.</p>
-      <a class="button" href="mailto:akservices032021@gmail.com?subject=Demande%20de%20d%C3%A9pannage%20plomberie">
-        Demander un dépannage <span class="arrow" aria-hidden="true">→</span>
+      <p class="hero-copy">AKServices propose le dépannage plomberie à Marseille 24 h/24. Fuite d’eau, canalisation bouchée ou robinetterie défaillante : appelez-nous pour expliquer la situation.</p>
+      <a class="button" href="tel:+33651423550" aria-label="Appeler AKServices au 06 51 42 35 50">
+        Appeler le 06 51 42 35 50 <span class="arrow" aria-hidden="true">→</span>
       </a>
       <aside class="alert" aria-label="Conseil en cas de fuite">
         <div class="alert-icon" aria-hidden="true">!</div>
@@ -412,11 +432,12 @@
           <h2 id="contact-title">Besoin d’un dépannage ?</h2>
           <p>Écrivez à AKServices en décrivant votre demande.</p>
         </div>
-        <a class="button" href="mailto:akservices032021@gmail.com?subject=Demande%20de%20d%C3%A9pannage%20plomberie">
-          Contacter AKServices <span class="arrow" aria-hidden="true">→</span>
+        <a class="button" href="tel:+33651423550" aria-label="Appeler AKServices au 06 51 42 35 50">
+          Appeler AKServices <span class="arrow" aria-hidden="true">→</span>
         </a>
       </div>
-      <p class="availability">La disponibilité et le périmètre d’intervention sont à confirmer lors de votre demande.</p>
+      <p class="availability">Dépannage à Marseille 24 h/24. Pour les communes voisines, contactez AKServices afin de vérifier la disponibilité.</p>
+      <p class="contact-email">Vous préférez écrire ? <a href="mailto:akservices032021@gmail.com?subject=Demande%20de%20d%C3%A9pannage%20plomberie">akservices032021@gmail.com</a></p>
     </section>
   </main>
 

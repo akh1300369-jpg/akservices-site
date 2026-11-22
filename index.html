@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="AKServices vous accompagne dans votre projet de rénovation énergétique, du premier diagnostic au plan de travaux.">
+  <meta name="description" content="AKServices vous accompagne en rénovation énergétique et propose un dépannage plomberie 24 h/24 à Marseille.">
   <title>AKServices — Conseil en rénovation énergétique</title>
   <style>
     :root {
@@ -131,7 +131,7 @@
       padding: 10px 16px;
       border-radius: 10px;
       background: var(--accent);
-      color: #fff;
+      color: var(--page);
       font-weight: 650;
       transition: background 160ms ease, transform 160ms ease;
     }
@@ -139,7 +139,7 @@
     .nav .nav-cta:hover {
       transform: translateY(-1px);
       background: var(--accent-dark);
-      color: #fff;
+      color: var(--page);
     }
 
     .theme-toggle {
@@ -221,7 +221,7 @@
       border: 1px solid var(--accent);
       border-radius: 11px;
       background: var(--accent);
-      color: #fff;
+      color: var(--page);
       font-size: 14px;
       font-weight: 680;
       text-decoration: none;
@@ -246,6 +246,34 @@
     }
 
     .hero-note span { color: var(--accent); font-size: 16px; }
+
+    .plumbing-announcement {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin: 0 auto 34px;
+      padding: 21px 25px;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      border-radius: 16px;
+      background: var(--surface);
+    }
+
+    .plumbing-announcement h2 {
+      margin: 0 0 3px;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .plumbing-announcement p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .plumbing-announcement .button { flex: 0 0 auto; }
 
     .hero-visual {
       position: relative;
@@ -519,7 +547,7 @@
       flex: 0 0 auto;
       border-color: #fff;
       background: #fff;
-      color: var(--accent-dark);
+      color: #244a33;
     }
 
     .contact-panel .button:hover { background: #eef4ed; }
@@ -565,6 +593,7 @@
       h1 { font-size: clamp(42px, 12vw, 58px); }
       .hero-copy { font-size: 16px; }
       .hero-visual { min-height: 315px; }
+      .plumbing-announcement { align-items: flex-start; flex-direction: column; gap: 15px; padding: 20px; }
       .section { padding: 62px 0; }
       .service-grid, .steps { grid-template-columns: 1fr; gap: 12px; }
       .service-card { min-height: 0; padding: 22px; }
@@ -628,6 +657,14 @@
         </div>
         <div class="visual-label"><span aria-hidden="true">🌿</span> Un habitat plus confortable</div>
       </div>
+    </section>
+
+    <section class="plumbing-announcement shell" aria-label="Annonce de dépannage plomberie">
+      <div>
+        <h2>Dépannage plomberie 24 h/24 à Marseille</h2>
+        <p>Une urgence ? Appelez AKServices au <a href="tel:+33651423550">06 51 42 35 50</a>.</p>
+      </div>
+      <a class="button" href="tel:+33651423550">Appeler maintenant <span class="arrow" aria-hidden="true">→</span></a>
     </section>
 
     <section class="section soft" id="services" aria-labelledby="services-title">
