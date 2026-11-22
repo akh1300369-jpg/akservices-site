@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="AKServices vous accompagne dans votre projet de rénovation énergétique, du premier diagnostic au plan de travaux.">
+  <title>AKServices — Conseil en rénovation énergétique</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f7f8f4;
+      --surface: #fff;
+      --surface-soft: #eff2e9;
+      --text: #202820;
+      --muted: #667166;
+      --line: #e2e7dc;
+      --accent: #376b4a;
+      --accent-dark: #244a33;
+      --accent-soft: #e5eee3;
+      --shadow: 0 18px 48px rgb(34 53 38 / 9%);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --page: #151a16;
+        --surface: #202720;
+        --surface-soft: #252e25;
+        --text: #eff3ec;
+        --muted: #aab5a8;
+        --line: #343e34;
+        --accent: #9ac49f;
+        --accent-dark: #b7d7b9;
+        --accent-soft: #293a2d;
+        --shadow: 0 18px 48px rgb(0 0 0 / 23%);
+      }
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --page: #151a16;
+      --surface: #202720;
+      --surface-soft: #252e25;
+      --text: #eff3ec;
+      --muted: #aab5a8;
+      --line: #343e34;
+      --accent: #9ac49f;
+      --accent-dark: #b7d7b9;
+      --accent-soft: #293a2d;
+      --shadow: 0 18px 48px rgb(0 0 0 / 23%);
+    }
+
+    :root[data-theme="light"] { color-scheme: light; }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-width: 320px;
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+
+    a { color: inherit; }
+
+    .shell {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      min-height: 82px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-size: 17px;
+      font-weight: 750;
+      letter-spacing: -0.045em;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 11px;
+      background: var(--accent);
+      color: var(--page);
+      font-size: 19px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 550;
+      text-decoration: none;
+      transition: color 160ms ease;
+    }
+
+    .nav a:hover { color: var(--accent); }
+
+    .nav .nav-cta {
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 650;
+      transition: background 160ms ease, transform 160ms ease;
+    }
+
+    .nav .nav-cta:hover {
+      transform: translateY(-1px);
+      background: var(--accent-dark);
+      color: #fff;
+    }
+
+    .theme-toggle {
+      display: inline-grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 17px;
+    }
+
+    .theme-toggle:hover { border-color: var(--accent); }
+
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .hero {
+      display: grid;
+      min-height: 530px;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 66px;
+      padding: 64px 0 78px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 17px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+      content: "";
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 620px;
+      margin-bottom: 19px;
+      font-size: clamp(42px, 5.3vw, 65px);
+      font-weight: 730;
+      letter-spacing: -0.065em;
+      line-height: 1.04;
+    }
+
+    h1 span { color: var(--accent); }
+
+    .hero-copy {
+      max-width: 525px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 19px;
+      border: 1px solid var(--accent);
+      border-radius: 11px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 680;
+      text-decoration: none;
+      transition: transform 170ms ease, box-shadow 170ms ease, background 170ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: var(--accent-dark);
+      box-shadow: var(--shadow);
+    }
+
+    .button .arrow { font-size: 18px; line-height: 1; }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 17px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero-note span { color: var(--accent); font-size: 16px; }
+
+    .hero-visual {
+      position: relative;
+      min-height: 355px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background:
+        radial-gradient(ellipse at 75% 22%, rgb(255 255 255 / 62%) 0 8%, transparent 8.5%),
+        linear-gradient(145deg, #dce8d9 0%, #cbdcc9 48%, #b8ceb6 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .sun {
+      position: absolute;
+      top: 42px;
+      right: 51px;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #f3d991;
+      box-shadow: 0 0 0 14px rgb(243 217 145 / 22%);
+    }
+
+    .hill {
+      position: absolute;
+      right: -14%;
+      bottom: -96px;
+      left: -14%;
+      height: 230px;
+      border-radius: 50% 50% 0 0 / 25% 25% 0 0;
+      background: #9db99b;
+      transform: rotate(-7deg);
+    }
+
+    .hill.back {
+      right: 24%;
+      bottom: -122px;
+      left: -30%;
+      height: 265px;
+      background: #b1c9ad;
+      transform: rotate(12deg);
+    }
+
+    .house {
+      position: absolute;
+      z-index: 1;
+      right: 19%;
+      bottom: 56px;
+      width: 185px;
+      height: 150px;
+      border: 5px solid #718a72;
+      border-bottom: 0;
+      background: #f4f0e2;
+      box-shadow: 10px 14px 0 rgb(52 79 56 / 10%);
+    }
+
+    .roof {
+      position: absolute;
+      top: -66px;
+      left: -17px;
+      width: 210px;
+      height: 80px;
+      border-top: 9px solid #718a72;
+      border-left: 9px solid #718a72;
+      transform: rotate(45deg) scale(0.72);
+    }
+
+    .window {
+      position: absolute;
+      top: 27px;
+      left: 25px;
+      width: 43px;
+      height: 45px;
+      border: 4px solid #8da78c;
+      background: #d3e2d4;
+    }
+
+    .window::before, .window::after {
+      position: absolute;
+      background: #8da78c;
+      content: "";
+    }
+
+    .window::before { top: 17px; left: 0; width: 100%; height: 3px; }
+    .window::after { top: 0; left: 17px; width: 3px; height: 100%; }
+
+    .door {
+      position: absolute;
+      right: 25px;
+      bottom: 0;
+      width: 43px;
+      height: 78px;
+      border: 4px solid #8da78c;
+      border-bottom: 0;
+      background: #d7dfcd;
+    }
+
+    .door::after {
+      position: absolute;
+      top: 38px;
+      left: 6px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #718a72;
+      content: "";
+    }
+
+    .visual-label {
+      position: absolute;
+      z-index: 2;
+      bottom: 21px;
+      left: 21px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 14px;
+      border: 1px solid rgb(255 255 255 / 58%);
+      border-radius: 13px;
+      background: rgb(255 255 255 / 82%);
+      color: #27382b;
+      font-size: 13px;
+      font-weight: 650;
+      backdrop-filter: blur(10px);
+    }
+
+    .visual-label span { font-size: 18px; }
+
+    .section { padding: 80px 0; }
+    .section.soft { background: var(--surface-soft); }
+
+    .section-heading {
+      max-width: 650px;
+      margin-bottom: 34px;
+    }
+
+    .section-heading .eyebrow { margin-bottom: 12px; }
+
+    h2 {
+      margin-bottom: 11px;
+      font-size: clamp(30px, 4vw, 42px);
+      font-weight: 720;
+      letter-spacing: -0.055em;
+      line-height: 1.16;
+    }
+
+    .section-intro {
+      max-width: 620px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .service-card {
+      min-height: 235px;
+      padding: 25px 24px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: var(--surface);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      display: grid;
+      width: 43px;
+      height: 43px;
+      place-items: center;
+      margin-bottom: 19px;
+      border-radius: 13px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 20px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 8px;
+      font-size: 17px;
+      font-weight: 680;
+      letter-spacing: -0.025em;
+    }
+
+    .service-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 30px;
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      padding-top: 59px;
+      counter-increment: step;
+    }
+
+    .step::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--surface);
+      color: var(--accent);
+      content: "0" counter(step);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      font-size: 17px;
+      font-weight: 680;
+    }
+
+    .step p {
+      max-width: 310px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      padding: 42px 45px;
+      border-radius: 22px;
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .contact-panel .eyebrow { color: #dcebdd; }
+
+    .contact-panel h2 {
+      max-width: 570px;
+      margin-bottom: 8px;
+      font-size: clamp(28px, 3.5vw, 39px);
+    }
+
+    .contact-panel p {
+      max-width: 550px;
+      margin-bottom: 0;
+      color: rgb(255 255 255 / 82%);
+      font-size: 15px;
+    }
+
+    .contact-panel .button {
+      flex: 0 0 auto;
+      border-color: #fff;
+      background: #fff;
+      color: var(--accent-dark);
+    }
+
+    .contact-panel .button:hover { background: #eef4ed; }
+
+    .fine-print {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer {
+      display: flex;
+      min-height: 84px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 64px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer a { text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 780px) {
+      .hero { grid-template-columns: 1fr 0.8fr; gap: 30px; }
+      .hero-visual { min-height: 310px; }
+      .house { right: 12%; transform: scale(0.86); transform-origin: bottom right; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+      .contact-panel { align-items: flex-start; flex-direction: column; padding: 34px; }
+    }
+
+    @media (max-width: 600px) {
+      .shell { width: min(100% - 36px, 460px); }
+      .topbar { min-height: 70px; }
+      .nav { gap: 13px; }
+      .nav a:not(.nav-cta) { display: none; }
+      .nav .nav-cta { padding: 9px 12px; font-size: 13px; }
+      .theme-toggle { width: 36px; height: 36px; }
+      .hero { grid-template-columns: 1fr; gap: 35px; padding: 60px 0; }
+      h1 { font-size: clamp(42px, 12vw, 58px); }
+      .hero-copy { font-size: 16px; }
+      .hero-visual { min-height: 315px; }
+      .section { padding: 62px 0; }
+      .service-grid, .steps { grid-template-columns: 1fr; gap: 12px; }
+      .service-card { min-height: 0; padding: 22px; }
+      .steps { gap: 27px; }
+      .step { padding-top: 0; padding-left: 58px; min-height: 44px; }
+      .step::before { top: 0; }
+      .contact-panel { padding: 28px 23px; }
+      footer { align-items: flex-start; flex-direction: column; justify-content: center; padding: 20px 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar shell">
+    <a class="brand" href="#" aria-label="AKServices, accueil">
+      <span class="brand-mark" aria-hidden="true">⌂</span>
+      <span>AKServices</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#services">Nos services</a>
+      <a href="#approche">Notre approche</a>
+      <a class="nav-cta" href="mailto:akservices032021@gmail.com">Parlons de votre projet</a>
+      <button class="theme-toggle" type="button" aria-label="Passer en mode sombre" title="Changer de thème">
+        <span aria-hidden="true">☾</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Conseil en rénovation énergétique</p>
+        <h1 id="hero-title">Rénover mieux.<br><span>Vivre plus sereinement.</span></h1>
+        <p class="hero-copy">Un projet de rénovation peut vite sembler complexe. Nous vous aidons à y voir clair, à prioriser les travaux et à avancer à votre rythme.</p>
+        <a class="button" href="mailto:akservices032021@gmail.com?subject=Mon%20projet%20de%20r%C3%A9novation">
+          Échanger sur mon projet <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <p class="hero-note"><span aria-hidden="true">✳</span> Un conseil indépendant, adapté à votre logement.</p>
+      </div>
+      <div class="hero-visual" role="img" aria-label="Illustration d'une maison entourée de collines verdoyantes">
+        <div class="sun"></div>
+        <div class="hill back"></div>
+        <div class="hill"></div>
+        <div class="house">
+          <div class="roof"></div>
+          <div class="window"></div>
+          <div class="door"></div>
+        </div>
+        <div class="visual-label"><span aria-hidden="true">🌿</span> Un habitat plus confortable</div>
+      </div>
+    </section>
+
+    <section class="section soft" id="services" aria-labelledby="services-title">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Un accompagnement sur mesure</p>
+          <h2 id="services-title">Les bonnes décisions,<br>dans le bon ordre.</h2>
+          <p class="section-intro">Chaque logement est différent. Nous vous aidons à comprendre ses besoins et à construire un projet cohérent avec votre budget et vos priorités.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">⌕</div>
+            <h3>Comprendre votre logement</h3>
+            <p>Faisons le point sur le confort, les consommations et les caractéristiques de votre habitation pour cerner les priorités.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">↗</div>
+            <h3>Prioriser les travaux</h3>
+            <p>Comparez les options et organisez les étapes : isolation, ventilation, chauffage et interventions complémentaires.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">▤</div>
+            <h3>Préparer votre budget</h3>
+            <p>Structurez une première enveloppe et repérez les dispositifs d’aide à vérifier selon votre situation et les règles en vigueur.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="approche" aria-labelledby="approach-title">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Simple et concret</p>
+          <h2 id="approach-title">De l’idée au plan d’action.</h2>
+          <p class="section-intro">Un accompagnement lisible pour faire avancer votre projet sans vous perdre dans les démarches.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <h3>On fait connaissance</h3>
+            <p>Vous nous décrivez votre logement, vos attentes et les questions qui vous préoccupent.</p>
+          </article>
+          <article class="step">
+            <h3>On clarifie les options</h3>
+            <p>Nous mettons à plat les priorités, les scénarios de travaux et les points à faire vérifier.</p>
+          </article>
+          <article class="step">
+            <h3>Vous avancez sereinement</h3>
+            <p>Vous repartez avec des repères concrets pour décider de la suite et solliciter les bons professionnels.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell" aria-labelledby="contact-title">
+      <div class="contact-panel">
+        <div>
+          <p class="eyebrow">Votre projet commence ici</p>
+          <h2 id="contact-title">Et si on faisait le premier point ?</h2>
+          <p>Quelques lignes suffisent pour nous parler de votre logement et de vos envies.</p>
+        </div>
+        <a class="button" href="mailto:akservices032021@gmail.com?subject=Mon%20projet%20de%20r%C3%A9novation">
+          Nous contacter <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+      <p class="fine-print">Les aides financières et les critères d’éligibilité évoluent. Toute estimation doit être vérifiée auprès des organismes compétents au moment de votre projet.</p>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <a class="brand" href="#" aria-label="AKServices, accueil">
+      <span class="brand-mark" aria-hidden="true">⌂</span>
+      <span>AKServices</span>
+    </a>
+    <span>© 2026 AKServices · Conseils pour mieux rénover</span>
+  </footer>
+  <script>
+    const root = document.documentElement;
+    const toggle = document.querySelector(".theme-toggle");
+    const icon = toggle.querySelector("span");
+
+    function updateToggle() {
+      const isDark = root.dataset.theme
+        ? root.dataset.theme === "dark"
+        : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      icon.textContent = isDark ? "☀" : "☾";
+      toggle.setAttribute("aria-label", `Passer en mode ${isDark ? "clair" : "sombre"}`);
+    }
+
+    toggle.addEventListener("click", () => {
+      const isDark = root.dataset.theme
+        ? root.dataset.theme === "dark"
+        : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      root.dataset.theme = isDark ? "light" : "dark";
+      updateToggle();
+    });
+
+    updateToggle();
+  </script>
+</body>
+</html>
